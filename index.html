@@ -131,7 +131,10 @@
 <nav class="fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent" id="navbar">
 <div class="flex justify-between items-center h-20 px-6 md:px-12 max-w-[1400px] mx-auto">
 <div class="flex items-center gap-3">
-<!-- Logo removido conforme solicitado -->
+  <!-- Ícone Home - apenas mobile -->
+  <button id="mobile-home-btn" class="md:hidden p-2 text-white transition-colors duration-300" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="background:none; border:none; cursor:pointer;" aria-label="Voltar ao início">
+    <span class="material-symbols-outlined" style="font-size:28px;">home</span>
+  </button>
 </div>
 
 <div class="hidden md:flex items-center gap-10">
@@ -605,25 +608,20 @@ title="Localização André de Coimbra — Conde, PB">
             const nav = document.getElementById('navbar');
             const links = nav.querySelectorAll('.nav-link-item');
             const menuBtn = document.getElementById('mobile-menu-btn');
+            const homeBtn = document.getElementById('mobile-home-btn');
 
             if (window.scrollY > 80) {
                 nav.classList.add('py-2', 'shadow-deep', 'bg-surface/95', 'backdrop-blur-md', 'border-border-gold/20', 'shadow-sm');
                 nav.classList.remove('h-20', 'border-transparent');
                 links.forEach(l => { l.classList.remove('text-on-primary/80'); l.classList.add('text-text-muted'); });
-                if (menuBtn) {
-                    menuBtn.classList.remove('text-white');
-                    menuBtn.classList.add('text-primary');
-                    menuBtn.style.color = '#2A455E';
-                }
+                if (menuBtn) { menuBtn.classList.remove('text-white'); menuBtn.classList.add('text-primary'); menuBtn.style.color = '#2A455E'; }
+                if (homeBtn) { homeBtn.classList.remove('text-white'); homeBtn.classList.add('text-primary'); homeBtn.style.color = '#2A455E'; }
             } else {
                 nav.classList.remove('py-2', 'shadow-deep', 'bg-surface/95', 'backdrop-blur-md', 'border-border-gold/20', 'shadow-sm');
                 nav.classList.add('h-20', 'border-transparent');
                 links.forEach(l => { l.classList.remove('text-text-muted'); l.classList.add('text-on-primary/80'); });
-                if (menuBtn) {
-                    menuBtn.classList.remove('text-primary');
-                    menuBtn.classList.add('text-white');
-                    menuBtn.style.color = '#ffffff';
-                }
+                if (menuBtn) { menuBtn.classList.remove('text-primary'); menuBtn.classList.add('text-white'); menuBtn.style.color = '#ffffff'; }
+                if (homeBtn) { homeBtn.classList.remove('text-primary'); homeBtn.classList.add('text-white'); homeBtn.style.color = '#ffffff'; }
             }
         }
 
