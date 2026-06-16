@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>André de Coimbra — Psicólogo CRP-02/28458</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "primary": "#2A455E",
+              "primary-container": "#1D3042",
+              "secondary": "#FBE9CD",
+              "tertiary": "#000000",
+              "gold": "#FBE9CD",
+              "gold-light": "#FFF5E6",
+              "gold-muted": "rgba(251, 233, 205, 0.15)",
+              "ocean-light": "#3C6386",
+              "off-white": "#FBE9CD",
+              "background": "#FFFFFF",
+              "surface": "#FFFFFF",
+              "on-primary": "#ffffff",
+              "on-surface": "#000000",
+              "text-muted": "#4A4A4A",
+              "border-gold": "rgba(251, 233, 205, 0.3)"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.125rem",
+              "lg": "0.25rem",
+              "xl": "0.5rem",
+              "full": "0.75rem"
+            },
+            "spacing": {
+              "section-padding": "120px",
+              "section-padding-mobile": "64px",
+              "text-max-width": "750px",
+              "grid-gutter": "24px",
+              "content-max-width": "1100px"
+            },
+            "fontFamily": {
+              "label-caps": ["Montserrat"],
+              "body-lg": ["Montserrat"],
+              "headline-md": ["Cormorant Garamond"],
+              "headline-lg": ["Cormorant Garamond"],
+              "body-md": ["Montserrat"],
+              "headline-sm": ["Cormorant Garamond"],
+              "display-hero-mobile": ["Cormorant Garamond"],
+              "nav-link": ["Montserrat"],
+              "display-hero": ["Cormorant Garamond"]
+            },
+            "fontSize": {
+              "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "500"}],
+              "body-lg": ["18px", {"lineHeight": "1.8", "fontWeight": "300"}],
+              "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+              "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "400"}],
+              "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "300"}],
+              "headline-sm": ["22px", {"lineHeight": "1.4", "fontWeight": "600"}],
+              "display-hero-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "300"}],
+              "nav-link": ["13px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}],
+              "display-hero": ["80px", {"lineHeight": "1.1", "letterSpacing": "0.02em", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+      }
+      
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal.reveal-from-left {
+        transform: translateX(-100px);
+      }
+      .reveal.reveal-from-left.visible {
+        transform: translateX(0);
+      }
+      
+      .stagger-reveal {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .visible .stagger-reveal {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(201, 168, 76, 0.2);
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: #2A455E; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: #FBE9CD; border-radius: 10px; }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+      }
+      .particle {
+        animation: float 6s ease-in-out infinite;
+      /* Custom Modal Styles */
+      .modal-backdrop {
+        transition: opacity 0.3s ease;
+      }
+      .modal-content {
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-gold/30 custom-scrollbar overflow-x-hidden">
+<nav class="fixed top-0 w-full z-50 transition-all duration-500 border-b border-transparent" id="navbar">
+<div class="flex justify-between items-center h-20 px-6 md:px-12 max-w-[1400px] mx-auto">
+<div class="flex items-center gap-3">
+<!-- Logo removido conforme solicitado -->
+</div>
+
+<div class="hidden md:flex items-center gap-10">
+<a class="nav-link-item font-nav-link text-nav-link uppercase tracking-widest text-on-primary/80 hover:text-gold-light transition-all duration-300" href="#sobre">Sobre</a>
+<a class="nav-link-item font-nav-link text-nav-link uppercase tracking-widest text-on-primary/80 hover:text-gold-light transition-all duration-300" href="#atendimento">Modalidades</a>
+<a class="nav-link-item font-nav-link text-nav-link uppercase tracking-widest text-on-primary/80 hover:text-gold-light transition-all duration-300" href="#servicos">Serviços</a>
+<a class="nav-link-item font-nav-link text-nav-link uppercase tracking-widest text-on-primary/80 hover:text-gold-light transition-all duration-300" href="#contato">Contato</a>
+<a class="bg-gold text-primary px-6 py-2.5 rounded-sm font-label-caps text-[11px] font-semibold hover:bg-gold-light transition-all active:scale-95 duration-200" href="https://wa.me/5581999875152" target="_blank" rel="noopener noreferrer">AGENDAR CONSULTA</a>
+</div>
+<button class="md:hidden text-on-primary/80">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<header class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0 bg-primary" id="hero-slideshow">
+<div class="absolute inset-0 bg-primary/85 z-10 mix-blend-multiply"></div>
+<!-- Humano Meditando -->
+<img src="images/hero_human_meditation.png" alt="Pessoa meditando em paz" class="hero-bg-img absolute inset-0 w-full h-full object-cover transform opacity-100 scale-110 transition-all duration-[7000ms] ease-in-out" />
+<!-- Humano no Oceano -->
+<img src="images/hero_human_ocean.png" alt="Pessoa relaxando no píer" class="hero-bg-img absolute inset-0 w-full h-full object-cover transform opacity-0 scale-100 transition-all duration-[7000ms] ease-in-out" />
+
+<!-- Humano Relaxando -->
+<img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1920&q=85&fit=crop&auto=format" alt="Momento de tranquilidade interior" class="hero-bg-img absolute inset-0 w-full h-full object-cover transform opacity-0 scale-100 transition-all duration-[7000ms] ease-in-out" />
+
+</div>
+<div class="absolute inset-0 z-10 opacity-20 pointer-events-none">
+<div class="particle absolute top-1/4 left-1/4 w-1 h-1 bg-gold rounded-full"></div>
+<div class="particle absolute top-1/3 right-1/4 w-2 h-2 bg-gold-light rounded-full" style="animation-delay: -2s;"></div>
+<div class="particle absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-gold rounded-full" style="animation-delay: -4s;"></div>
+<div class="particle absolute top-2/3 right-1/3 w-1 h-1 bg-gold-light rounded-full" style="animation-delay: -1s;"></div>
+</div>
+<div class="absolute top-0 left-0 w-full h-[120px] z-10 overflow-hidden pointer-events-none">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 120">
+<path fill="#FBE9CD" opacity="0.18">
+<animate attributeName="d" dur="9s" repeatCount="indefinite" values="
+                  M0,60 C180,100 360,20 540,60 C720,100 900,20 1080,60 C1260,100 1350,40 1440,60 L1440,0 L0,0 Z;
+                  M0,40 C180,80 360,0 540,40 C720,80 900,10 1080,50 C1260,90 1350,20 1440,40 L1440,0 L0,0 Z;
+                  M0,60 C180,100 360,20 540,60 C720,100 900,20 1080,60 C1260,100 1350,40 1440,60 L1440,0 L0,0 Z
+                "></animate>
+</path>
+<path fill="#FBE9CD" opacity="0.09">
+<animate attributename="d" dur="6s" repeatcount="indefinite" values="
+                  M0,80 C240,40 480,100 720,70 C960,40 1200,90 1440,60 L1440,0 L0,0 Z;
+                  M0,50 C240,90 480,30 720,60 C960,90 1200,40 1440,70 L1440,0 L0,0 Z;
+                  M0,80 C240,40 480,100 720,70 C960,40 1200,90 1440,60 L1440,0 L0,0 Z
+                "></animate>
+</path>
+</svg>
+</div>
+<div class="relative z-20 w-full px-6 md:px-16 lg:px-24 flex flex-col items-start -mt-[15vh]">
+<div class="max-w-[700px] w-full text-left">
+<img src="coimbra 2.png" alt="André de Coimbra - Psicólogo Clínico CRP-02/28458" class="w-full max-w-[500px] mb-8 object-left object-contain" />
+<p class="font-body-lg text-body-lg text-on-primary/90 mb-10">
+                    A saúde emocional é o alicerce de uma vida plena. Com escuta genuína, presença e cuidado, te acompanho nessa jornada de autoconhecimento e transformação.
+                </p>
+<div class="flex flex-col sm:flex-row items-start justify-start gap-6 w-full">
+<a class="w-full sm:w-auto px-10 py-4 bg-gold text-primary font-label-caps text-[13px] font-semibold tracking-widest hover:bg-gold-light hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-gold/20 text-center" href="https://wa.me/5581999875152" target="_blank" rel="noopener noreferrer">AGENDAR CONSULTA</a>
+<a class="w-full sm:w-auto px-10 py-4 border border-gold text-gold font-label-caps text-[13px] font-semibold tracking-widest hover:bg-gold-muted hover:-translate-y-1 transition-all duration-300 text-center" href="#atendimento">SAIBA MAIS</a>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-60 animate-bounce">
+<span class="material-symbols-outlined text-gold text-3xl">keyboard_double_arrow_down</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full h-[120px] z-10 overflow-hidden pointer-events-none">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 120">
+<path fill="#FBE9CD" opacity="1">
+<animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+                  M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z;
+                  M0,40 C360,0 1080,120 1440,40 L1440,120 L0,120 Z;
+                  M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z
+                "></animate>
+</path>
+<path fill="#FFFFFF" opacity="0.15">
+<animate attributename="d" dur="7s" repeatcount="indefinite" values="
+                  M0,80 C480,20 960,100 1440,50 L1440,120 L0,120 Z;
+                  M0,50 C480,100 960,20 1440,80 L1440,120 L0,120 Z;
+                  M0,80 C480,20 960,100 1440,50 L1440,120 L0,120 Z
+                "></animate>
+</path>
+</svg>
+</div>
+</header>
+<section class="py-[120px] bg-off-white" id="sobre">
+<div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="relative reveal">
+<div class="absolute -right-4 -bottom-4 w-full h-full border border-primary z-0"></div>
+<div class="relative aspect-[3/4] bg-gradient-to-br from-ocean-light to-primary-container z-10 flex flex-col items-center justify-center p-12 text-center group">
+<img alt="André de Coimbra" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700" src="andre.png"/>
+
+<div class="absolute bottom-6 right-6 bg-white py-3 px-6 shadow-xl shadow-primary/10 z-30">
+<span class="font-nav-link text-nav-link text-primary font-bold tracking-widest">CRP-02/28458</span>
+</div>
+</div>
+</div>
+<div class="reveal" style="transition-delay: 0.2s;">
+<div class="flex items-center gap-4 mb-6">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Sobre Mim</span>
+<div class="h-[1px] w-8 bg-primary"></div>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-8">André de Coimbra</h2>
+<div class="space-y-6 mb-12">
+<p class="font-body-md text-body-md text-primary font-medium">
+                        Sou psicólogo registrado no CRP-02/28458, com dedicação genuína ao cuidado da saúde emocional e ao desenvolvimento humano integral.
+                    </p>
+<p class="font-body-md text-body-md text-text-muted">
+                        Ofereço atendimento online, presencial e domiciliar, sempre com escuta acolhedora e sem julgamentos. Meu compromisso é criar um espaço seguro onde você possa se expressar livremente, promovendo autoconhecimento, equilíbrio emocional e transformações reais na sua vida pessoal e profissional.
+                    </p>
+</div>
+<div class="flex flex-wrap gap-x-12 gap-y-8">
+<div class="flex gap-4 items-start stagger-reveal">
+<div class="w-[1px] h-8 bg-primary mt-1"></div>
+<div>
+<span class="block font-headline-md text-primary leading-none mb-1">Escuta</span>
+<span class="font-label-caps text-[10px] text-text-muted uppercase tracking-widest">Ativa</span>
+</div>
+</div>
+<div class="flex gap-4 items-start stagger-reveal" style="transition-delay: 0.1s;">
+<div class="w-[1px] h-8 bg-primary mt-1"></div>
+<div>
+<span class="block font-headline-md text-primary leading-none mb-1">Zero</span>
+<span class="font-label-caps text-[10px] text-text-muted uppercase tracking-widest">Julgamentos</span>
+</div>
+</div>
+<div class="flex gap-4 items-start stagger-reveal" style="transition-delay: 0.2s;">
+<div class="w-[1px] h-8 bg-primary mt-1"></div>
+<div>
+<span class="block font-headline-md text-primary leading-none mb-1">Impacto</span>
+<span class="font-label-caps text-[10px] text-text-muted uppercase tracking-widest">Real</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-[120px] bg-primary-container text-on-primary" id="atendimento">
+<div class="max-w-[1100px] mx-auto px-6 mb-20 text-center reveal">
+<span class="font-label-caps text-label-caps text-gold uppercase tracking-widest mb-4 block">Processo Clínico</span>
+<h2 class="font-headline-lg text-headline-lg mb-6">Formas de Atendimento</h2>
+<div class="h-[1px] w-20 bg-gold mx-auto mb-8"></div>
+<p class="font-body-md text-body-md text-on-primary/70 max-w-[650px] mx-auto">
+                Soluções personalizadas para que o cuidado com a sua saúde mental se adapte perfeitamente à sua rotina e estilo de vida.
+            </p>
+</div>
+<div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 bg-gold/10 p-[1px] gap-[1px] reveal" style="transition-delay: 0.2s;">
+<div class="bg-primary-container p-12 transition-all duration-500 hover:bg-gold/5 group">
+<div class="mb-10 inline-block p-4 border border-gold/30 text-gold group-hover:bg-gold group-hover:text-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-4xl">monitor</span>
+</div>
+<h3 class="font-headline-md text-on-primary mb-6">Atendimento Online</h3>
+<p class="font-body-md text-on-primary/70 leading-relaxed">
+                    Mais do que uma alternativa, é uma evolução no cuidado. Faça terapia no conforto do seu espaço, sem deslocamentos ou trânsito, garantindo a constância necessária para transformações profundas. Organize seus pensamentos de forma simples e adaptada à sua rotina.
+                </p>
+</div>
+<div class="bg-primary-container p-12 transition-all duration-500 hover:bg-gold/5 group">
+<div class="mb-10 inline-block p-4 border border-gold/30 text-gold group-hover:bg-gold group-hover:text-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-4xl">location_city</span>
+</div>
+<h3 class="font-headline-md text-on-primary mb-6">Atendimento Presencial</h3>
+<p class="font-body-md text-on-primary/70 leading-relaxed">
+                    Um espaço preparado para te acolher com presença e profundidade. A terapia presencial valoriza a experiência do encontro humano em um ambiente livre de distrações. O contato direto e a escuta ativa fortalecem vínculos e favorecem mergulhos emocionais intensos.
+                </p>
+</div>
+<div class="bg-primary-container p-12 transition-all duration-500 hover:bg-gold/5 group">
+<div class="mb-10 inline-block p-4 border border-gold/30 text-gold group-hover:bg-gold group-hover:text-primary transition-colors duration-500">
+<span class="material-symbols-outlined text-4xl">home_work</span>
+</div>
+<h3 class="font-headline-md text-on-primary mb-6">Atendimento Domiciliar</h3>
+<p class="font-body-md text-on-primary/70 leading-relaxed">
+                    Cuide da sua saúde emocional na segurança do seu lar. Sem deslocamentos, você ganha mais privacidade e vivencia o processo em um ambiente familiar. Uma abordagem humanizada, flexível e totalmente adaptada ao seu ritmo e espaço.
+                </p>
+</div>
+</div>
+</section>
+<section class="py-[120px] bg-white" id="servicos">
+<div class="max-w-[1100px] mx-auto px-6 mb-16 text-center reveal">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4 block">Especialidades</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Outros Serviços</h2>
+<div class="h-[1px] w-20 bg-primary mx-auto"></div>
+</div>
+<div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-10 border border-primary/5 border-t-[3px] border-t-primary/30 hover:shadow-primary/20 shadow-sm transition-all duration-300 reveal group">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">lightbulb</span>
+<h4 class="font-headline-sm text-primary mb-4">Aconselhamento Psicológico</h4>
+<p class="font-body-md text-text-muted text-[15px]">Processo breve e focado no presente. Ideal para tomada de decisão, resolução de conflitos e apoio em desafios emocionais imediatos através de estratégias práticas.</p>
+</div>
+<div class="bg-white p-10 border border-primary/5 border-t-[3px] border-t-primary/30 hover:shadow-primary/20 shadow-sm transition-all duration-300 reveal group" style="transition-delay: 0.1s;">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">waves</span>
+<h4 class="font-headline-sm text-primary mb-4">Praia Terapia</h4>
+<p class="font-body-md text-text-muted text-[15px]">Cuidado mental em conexão com a natureza. O som das ondas e a brisa do mar reduzem o estresse e facilitam o acesso a emoções profundas, tornando o processo fluido.</p>
+</div>
+<div class="bg-white p-10 border border-primary/5 border-t-[3px] border-t-primary/30 hover:shadow-primary/20 shadow-sm transition-all duration-300 reveal group" style="transition-delay: 0.2s;">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">diamond</span>
+<h4 class="font-headline-sm text-primary mb-4">Vivências e Imersões</h4>
+<p class="font-body-md text-text-muted text-[15px]">Experiências estruturadas para gerar impacto real. Rompa bloqueios e ressignifique o passado através de dinâmicas práticas em um ambiente seguro.</p>
+</div>
+<div class="bg-white p-10 border border-primary/5 border-t-[3px] border-t-primary/30 hover:shadow-primary/20 shadow-sm transition-all duration-300 reveal group" style="transition-delay: 0.3s;">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">directions_walk</span>
+<h4 class="font-headline-sm text-primary mb-4">Caminhada Terapêutica</h4>
+<p class="font-body-md text-text-muted text-[15px]">União entre movimento, natureza e escuta. O diálogo flui, liberando tensões e estimulando a clareza mental sem a pressão de um ambiente fechado.</p>
+</div>
+<div class="bg-white p-10 border border-primary/5 border-t-[3px] border-t-primary/30 hover:shadow-primary/20 shadow-sm transition-all duration-300 reveal group" style="transition-delay: 0.4s;">
+<span class="material-symbols-outlined text-primary text-4xl mb-6 block group-hover:scale-110 transition-transform">mic_external_on</span>
+<h4 class="font-headline-sm text-primary mb-4">Palestras Interativas</h4>
+<p class="font-body-md text-text-muted text-[15px]">Muito além de transmitir conteúdo: reflexão e transformação em tempo real. Dinâmicas práticas com linguagem acessível para engajar o público ativamente.</p>
+</div>
+<div class="bg-primary-container p-10 border border-t-[3px] border-t-gold flex flex-col justify-center items-center text-center reveal" style="transition-delay: 0.5s;">
+<p class="font-headline-sm text-on-primary mb-6">Pronto para começar?</p>
+<a class="font-label-caps text-gold border-b border-gold pb-1 hover:text-gold-light hover:border-gold-light transition-all" href="https://wa.me/5581999875152" target="_blank" rel="noopener noreferrer">Ver todos os serviços</a>
+</div>
+</div>
+</section>
+<div class="relative bg-primary py-[100px] px-6 text-center overflow-hidden">
+<span class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-headline-lg text-[25rem] text-gold opacity-[0.03] select-none pointer-events-none">“</span>
+<div class="relative z-10 max-w-[750px] mx-auto reveal">
+<blockquote class="font-headline-lg text-[2.8rem] italic text-on-primary leading-tight mb-6">
+                "A pergunta não é se você tem tempo para fazer terapia."
+            </blockquote>
+<p class="font-headline-md text-gold mb-12 reveal" style="transition-delay: 0.2s;">
+                "É quanto tempo você está disposto a continuar vivendo no automático."
+            </p>
+<cite class="block font-label-caps text-on-primary/50 text-[12px] uppercase tracking-[0.3em] mb-12 not-italic">— André de Coimbra</cite>
+<a class="inline-block px-12 py-5 bg-gold text-primary font-label-caps text-[13px] font-bold tracking-widest hover:bg-gold-light hover:-translate-y-1 transition-all duration-300" href="https://wa.me/5581999875152" target="_blank" rel="noopener noreferrer">QUERO CUIDAR DE MIM</a>
+</div>
+<div class="absolute inset-0 z-0 opacity-5 pointer-events-none">
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 120">
+<path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#FBE9CD"></path>
+</svg>
+</div>
+</div>
+<section class="py-[120px] bg-off-white" id="contato">
+<div class="max-w-[1100px] mx-auto px-6">
+<div class="text-center mb-20 reveal">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest mb-4 block">Localização & Redes Sociais</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Entre em Contato</h2>
+<div class="h-[1px] w-20 bg-primary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+
+<!-- Coluna esquerda: Informações + Redes Sociais -->
+<div class="reveal reveal-from-left">
+<h3 class="font-headline-md text-primary mb-6">Informações</h3>
+<p class="font-body-md text-text-muted mb-10">
+Estou disponível para atendimento online em todo o Brasil e presencialmente na Paraíba. Entre em contato para agendar sua primeira sessão.
+</p>
+<div class="space-y-8 mb-10">
+<div class="flex gap-5 items-center">
+<span class="material-symbols-outlined text-primary text-2xl">call</span>
+<div>
+<span class="block font-label-caps text-[10px] text-text-muted uppercase tracking-widest mb-1">WhatsApp</span>
+<a class="font-body-md text-primary hover:text-ocean-light transition-colors font-medium" href="https://wa.me/5581999875152">(81) 99987-5152</a>
+</div>
+</div>
+<div class="flex gap-5 items-center">
+<span class="material-symbols-outlined text-primary text-2xl">mail</span>
+<div>
+<span class="block font-label-caps text-[10px] text-text-muted uppercase tracking-widest mb-1">E-mail</span>
+<a class="font-body-md text-primary hover:text-ocean-light transition-colors font-medium" href="mailto:andredecoimbra21@gmail.com">andredecoimbra21@gmail.com</a>
+</div>
+</div>
+<div class="flex gap-5 items-start">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5">location_on</span>
+<div>
+<span class="block font-label-caps text-[10px] text-text-muted uppercase tracking-widest mb-1">Endereço</span>
+<p class="font-body-md text-primary font-medium leading-snug">Av. Beira Mar, s/nº<br>Cidade Balneária Novo Mundo I<br>Conde – PB, 58322-000</p>
+</div>
+</div>
+<div class="flex gap-5 items-start">
+<span class="material-symbols-outlined text-primary text-2xl mt-0.5">schedule</span>
+<div>
+<span class="block font-label-caps text-[10px] text-text-muted uppercase tracking-widest mb-2">Horário de Funcionamento</span>
+<div class="grid grid-cols-2 gap-x-6 gap-y-1">
+<span class="font-body-md text-[13px] text-text-muted">Segunda a Sexta</span>
+<span class="font-body-md text-[13px] text-primary font-medium">09:00 – 19:00</span>
+<span class="font-body-md text-[13px] text-text-muted">Sábado</span>
+<span class="font-body-md text-[13px] text-text-muted">Fechado</span>
+<span class="font-body-md text-[13px] text-text-muted">Domingo</span>
+<span class="font-body-md text-[13px] text-text-muted">Fechado</span>
+</div>
+</div>
+</div>
+<div class="flex gap-5 items-center">
+<span class="material-symbols-outlined text-primary text-2xl">public</span>
+<div>
+<span class="block font-label-caps text-[10px] text-text-muted uppercase tracking-widest mb-1">Atendimento Online</span>
+<p class="font-body-md text-primary font-medium">Para todo o Brasil</p>
+</div>
+</div>
+</div>
+
+<!-- Redes Sociais -->
+<div class="pt-8 border-t border-primary/10">
+<span class="block font-label-caps text-[10px] text-text-muted uppercase tracking-widest mb-6">Siga nas Redes Sociais</span>
+<div class="flex gap-4 items-center">
+<a href="https://www.instagram.com/andrecoimbra.psicologo/" target="_blank" rel="noopener" aria-label="Instagram"
+class="group w-12 h-12 flex items-center justify-center border border-primary/20 hover:border-primary hover:bg-primary transition-all duration-300">
+<svg class="w-5 h-5 fill-current text-primary group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+</svg>
+</a>
+<a href="https://www.facebook.com/cursospalestras/" target="_blank" rel="noopener" aria-label="Facebook"
+class="group w-12 h-12 flex items-center justify-center border border-primary/20 hover:border-primary hover:bg-primary transition-all duration-300">
+<svg class="w-5 h-5 fill-current text-primary group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+</svg>
+</a>
+<a href="https://x.com/AndrdeCoimbra" target="_blank" rel="noopener" aria-label="X (Twitter)"
+class="group w-12 h-12 flex items-center justify-center border border-primary/20 hover:border-primary hover:bg-primary transition-all duration-300">
+<svg class="w-5 h-5 fill-current text-primary group-hover:text-white transition-colors duration-300" viewBox="0 0 24 24">
+<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.906-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+</svg>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Coluna direita: Mapa Google Maps -->
+<div class="reveal shadow-lg overflow-hidden" style="transition-delay: 0.2s;">
+<div class="bg-primary px-6 py-4">
+<span class="font-label-caps text-[11px] text-gold uppercase tracking-widest">Localização</span>
+<p class="font-headline-sm text-white mt-1">Av. Beira Mar — Conde, PB</p>
+</div>
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2!2d-34.905!3d-7.261!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ace0e0000000001%3A0x0!2sAv.%20Beira%20Mar%2C%20Cidade%20Balne%C3%A1ria%20Novo%20Mundo%20I%2C%20Conde%20-%20PB%2C%2058322-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+width="100%"
+height="400"
+style="border:0; display:block;"
+allowfullscreen=""
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+title="Localização André de Coimbra — Conde, PB">
+</iframe>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer class="bg-primary text-on-primary pt-[60px] pb-8 border-t border-border-gold">
+<div class="max-w-[1100px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 mb-20">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="relative w-8 h-8">
+<span class="font-headline-sm text-gold-light font-medium tracking-tighter absolute left-0 top-0 text-xl">A</span>
+<span class="font-headline-sm text-gold-light font-medium tracking-tighter absolute right-0 bottom-0 translate-y-1 text-xl">C</span>
+</div>
+<span class="font-headline-sm text-gold-light">André de Coimbra</span>
+</div>
+<p class="font-body-md text-on-primary/60 text-sm mb-6 max-w-[280px]">
+                    Cuidando da saúde emocional com presença, dedicação e ética profissional.
+                </p>
+<span class="font-label-caps text-[10px] text-gold tracking-widest">CRP-02/28458</span>
+</div>
+<div>
+<h5 class="font-label-caps text-gold text-[11px] uppercase tracking-[0.2em] mb-8">Navegação</h5>
+<ul class="space-y-4">
+<li><a class="font-body-md text-on-primary/50 hover:text-gold-light text-sm transition-colors" href="#sobre">Sobre</a></li>
+<li><a class="font-body-md text-on-primary/50 hover:text-gold-light text-sm transition-colors" href="#atendimento">Modalidades</a></li>
+<li><a class="font-body-md text-on-primary/50 hover:text-gold-light text-sm transition-colors" href="#servicos">Serviços</a></li>
+<li><a class="font-body-md text-on-primary/50 hover:text-gold-light text-sm transition-colors" href="#contato">Contato</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-gold text-[11px] uppercase tracking-[0.2em] mb-8">Atendimento</h5>
+<div class="space-y-4">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-gold text-lg">public</span>
+<span class="font-body-md text-on-primary/60 text-sm">Online — Todo o Brasil</span>
+</div>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-gold text-lg">location_on</span>
+<span class="font-body-md text-on-primary/60 text-sm">Presencial — Conde, PB</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-[1100px] mx-auto px-6 pt-12 border-t border-border-gold/30 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+<p class="font-body-md text-[11px] text-on-primary/30 uppercase tracking-[0.1em] md:text-left">
+                © 2024 André de Coimbra — Psicólogo CRP-02/28458. Todos os direitos reservados.
+            </p>
+<div class="flex gap-6 justify-center">
+    <a href="javascript:void(0)" onclick="openPolicyModal('privacy')" class="font-body-md text-on-primary/40 hover:text-gold-light text-[11px] uppercase tracking-[0.1em] transition-colors">Política de Privacidade</a>
+    <a href="javascript:void(0)" onclick="openPolicyModal('cookies')" class="font-body-md text-on-primary/40 hover:text-gold-light text-[11px] uppercase tracking-[0.1em] transition-colors">Política de Cookies</a>
+</div>
+</div>
+</footer>
+<script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            const links = nav.querySelectorAll('.nav-link-item');
+            const menuBtn = nav.querySelector('button');
+
+            if (window.scrollY > 80) {
+                nav.classList.add('py-2', 'shadow-deep', 'bg-surface/95', 'backdrop-blur-md', 'border-border-gold/20', 'shadow-sm');
+                nav.classList.remove('h-20', 'border-transparent');
+                links.forEach(l => { l.classList.remove('text-on-primary/80'); l.classList.add('text-text-muted'); });
+                if (menuBtn) { menuBtn.classList.remove('text-on-primary/80'); menuBtn.classList.add('text-primary'); }
+            } else {
+                nav.classList.remove('py-2', 'shadow-deep', 'bg-surface/95', 'backdrop-blur-md', 'border-border-gold/20', 'shadow-sm');
+                nav.classList.add('h-20', 'border-transparent');
+                links.forEach(l => { l.classList.remove('text-text-muted'); l.classList.add('text-on-primary/80'); });
+                if (menuBtn) { menuBtn.classList.remove('text-primary'); menuBtn.classList.add('text-on-primary/80'); }
+            }
+        });
+
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const slides = document.querySelectorAll('.hero-bg-img');
+        let currentSlide = 0;
+        if (slides.length > 0) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('opacity-100', 'scale-110');
+                slides[currentSlide].classList.add('opacity-0', 'scale-100');
+                
+                currentSlide = (currentSlide + 1) % slides.length;
+                
+                slides[currentSlide].classList.remove('opacity-0', 'scale-100');
+                slides[currentSlide].classList.add('opacity-100', 'scale-110');
+            }, 6000);
+        }
+
+        // Funções para controle do Modal de Políticas
+        function openPolicyModal(tab = 'privacy') {
+            const modal = document.getElementById('policy-modal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            // Ativa o modal
+            modal.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+            modal.classList.add('flex');
+            
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            // Abre na aba correta
+            switchPolicyTab(tab);
+        }
+
+        function closePolicyModal() {
+            const modal = document.getElementById('policy-modal');
+            const modalContent = modal.querySelector('.modal-content');
+            
+            modalContent.classList.add('scale-95', 'opacity-0');
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
+        function switchPolicyTab(tab) {
+            const privacyBtn = document.getElementById('tab-privacy-btn');
+            const cookiesBtn = document.getElementById('tab-cookies-btn');
+            const privacyContent = document.getElementById('tab-privacy-content');
+            const cookiesContent = document.getElementById('tab-cookies-content');
+            
+            if (tab === 'privacy') {
+                privacyBtn.classList.add('border-gold', 'text-gold-light', 'font-bold');
+                privacyBtn.classList.remove('border-transparent', 'text-on-primary/60');
+                
+                cookiesBtn.classList.add('border-transparent', 'text-on-primary/60');
+                cookiesBtn.classList.remove('border-gold', 'text-gold-light', 'font-bold');
+                
+                privacyContent.classList.remove('hidden');
+                cookiesContent.classList.add('hidden');
+            } else {
+                cookiesBtn.classList.add('border-gold', 'text-gold-light', 'font-bold');
+                cookiesBtn.classList.remove('border-transparent', 'text-on-primary/60');
+                
+                privacyBtn.classList.add('border-transparent', 'text-on-primary/60');
+                privacyBtn.classList.remove('border-gold', 'text-gold-light', 'font-bold');
+                
+                cookiesContent.classList.remove('hidden');
+                privacyContent.classList.add('hidden');
+            }
+        }
+
+        // Fechar modal ao clicar fora da área dele
+        document.getElementById('policy-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePolicyModal();
+            }
+        });
+
+        // Cookies LGPD/GDPR - CSS inline puro
+        function showCookieBanner() {
+            var b = document.getElementById('cookie-banner');
+            b.style.display = 'flex';
+            setTimeout(function() { b.style.bottom = '0'; b.style.opacity = '1'; }, 50);
+        }
+        function hideCookieBanner() {
+            var b = document.getElementById('cookie-banner');
+            b.style.bottom = '-200px';
+            b.style.opacity = '0';
+            setTimeout(function() { b.style.display = 'none'; }, 500);
+        }
+        function acceptCookies() {
+            localStorage.setItem('lgpd-consent-v3', 'accepted');
+            hideCookieBanner();
+        }
+        function declineCookies() {
+            localStorage.setItem('lgpd-consent-v3', 'declined');
+            hideCookieBanner();
+        }
+        // Exibe banner ao carregar se ainda não decidiu
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('lgpd-consent-v3')) {
+                setTimeout(showCookieBanner, 600);
+            }
+        });
+    </script>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5581999875152" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+       class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20ba5a] hover:scale-110 active:scale-95 transition-all duration-300 group">
+        <!-- Tooltip -->
+        <span class="absolute right-full mr-4 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-gray-900 text-white text-sm font-medium rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">Fale comigo!</span>
+        <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping group-hover:animate-none pointer-events-none"></span>
+        <svg class="w-8 h-8 fill-current relative z-10" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <!-- ===== BANNER DE COOKIES LGPD / RGPD - Rodapé ===== -->
+    <div id="cookie-banner" style="
+        display: none;
+        position: fixed;
+        bottom: -200px;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: #1a2e3f;
+        border-top: 1px solid rgba(251,233,205,0.25);
+        box-shadow: 0 -8px 40px rgba(0,0,0,0.4);
+        padding: 20px 32px;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+        justify-content: space-between;
+        opacity: 0;
+        transition: bottom 0.5s ease, opacity 0.5s ease;
+    ">
+        <!-- Texto + badges -->
+        <div style="flex:1; min-width:260px; display:flex; gap:14px; align-items:flex-start;">
+            <span style="font-size:24px; margin-top:2px;">🍪</span>
+            <div>
+                <div style="display:flex; gap:8px; margin-bottom:8px; flex-wrap:wrap;">
+                    <span style="background:rgba(251,233,205,0.12); border:1px solid rgba(251,233,205,0.25); color:#FBE9CD; font-size:10px; font-family:Montserrat,sans-serif; letter-spacing:0.1em; padding:3px 9px; border-radius:20px;">LGPD — Lei 13.709/2018</span>
+                    <span style="background:rgba(251,233,205,0.12); border:1px solid rgba(251,233,205,0.25); color:#FBE9CD; font-size:10px; font-family:Montserrat,sans-serif; letter-spacing:0.1em; padding:3px 9px; border-radius:20px;">RGPD / GDPR — UE 2016/679</span>
+                </div>
+                <p style="margin:0; font-size:13px; line-height:1.65; color:rgba(255,255,255,0.75); font-family:Montserrat,sans-serif;">
+                    Utilizamos cookies essenciais e estatísticos para melhorar sua experiência. Ao clicar em <strong style="color:#FFF5E6;">Aceitar</strong>, você concorda com nossas
+                    <a href="javascript:void(0)" onclick="openPolicyModal('privacy')" style="color:#FBE9CD; text-decoration:underline;">Políticas de Privacidade</a> e
+                    <a href="javascript:void(0)" onclick="openPolicyModal('cookies')" style="color:#FBE9CD; text-decoration:underline;">Uso de Cookies</a>.
+                </p>
+            </div>
+        </div>
+        <!-- Botões -->
+        <div style="display:flex; gap:12px; flex-shrink:0;">
+            <button onclick="declineCookies()" style="padding:11px 22px; background:transparent; border:1px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.8); font-family:Montserrat,sans-serif; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; border-radius:6px; cursor:pointer;"
+                onmouseover="this.style.borderColor='rgba(255,255,255,0.6)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.25)'">
+                Recusar
+            </button>
+            <button onclick="acceptCookies()" style="padding:11px 28px; background:#FBE9CD; border:none; color:#1a2e3f; font-family:Montserrat,sans-serif; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; border-radius:6px; cursor:pointer;"
+                onmouseover="this.style.background='#FFF5E6'" onmouseout="this.style.background='#FBE9CD'">
+                ✓ Aceitar
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal de Políticas (Privacidade e Cookies) -->
+    <div id="policy-modal" class="fixed inset-0 z-[100] hidden items-center justify-center opacity-0 pointer-events-none modal-backdrop bg-black/60 backdrop-blur-sm px-4">
+        <div class="bg-primary border border-border-gold/30 w-full max-w-[700px] h-[80vh] flex flex-col shadow-2xl rounded-lg overflow-hidden modal-content scale-95 opacity-0">
+            <!-- Header do Modal -->
+            <div class="px-6 py-4 bg-[#1e3245] border-b border-border-gold/20 flex justify-between items-center">
+                <h3 class="font-headline-sm text-gold-light text-lg font-medium">Políticas de Privacidade & Cookies</h3>
+                <button onclick="closePolicyModal()" class="text-on-primary/60 hover:text-gold-light transition-colors text-2xl" aria-label="Fechar">&times;</button>
+            </div>
+            
+            <!-- Abas (Tabs) -->
+            <div class="flex border-b border-border-gold/10 bg-primary">
+                <button id="tab-privacy-btn" onclick="switchPolicyTab('privacy')" class="flex-1 py-4 text-center font-label-caps text-xs tracking-wider border-b-2 border-gold text-gold-light font-bold transition-all duration-300">
+                    Política de Privacidade (LGPD)
+                </button>
+                <button id="tab-cookies-btn" onclick="switchPolicyTab('cookies')" class="flex-1 py-4 text-center font-label-caps text-xs tracking-wider border-b-2 border-transparent text-on-primary/60 hover:text-gold-light transition-all duration-300">
+                    Termos & Cookies
+                </button>
+            </div>
+            
+            <!-- Conteúdo das Abas (Scrollable) -->
+            <div class="flex-1 overflow-y-auto p-6 md:p-8 space-y-6 text-on-primary/80 font-body-md text-sm leading-relaxed custom-scrollbar bg-primary/95">
+                
+                <!-- Tab 1: Privacidade -->
+                <div id="tab-privacy-content" class="space-y-6">
+                    <h4 class="font-headline-sm text-gold-light text-base mb-4">1. Compromisso com a Proteção de Dados (LGPD e RGPD/GDPR)</h4>
+                    <p>
+                        Esta Política de Privacidade tem como objetivo esclarecer, de forma transparente, como as informações e dados pessoais dos usuários deste site são coletados, tratados e salvaguardados pelo consultório do psicólogo clínico André de Coimbra (CRP-02/28458). Nossas operações estão em total conformidade com a <strong>Lei Geral de Proteção de Dados Pessoais (LGPD — Lei Federal nº 13.709/2018)</strong> do Brasil e com o <strong>Regulamento Geral sobre a Proteção de Dados (RGPD/GDPR — Regulamento UE 2016/679)</strong> da União Europeia.
+                    </p>
+                    
+                    <h4 class="font-headline-sm text-gold-light text-base mb-4">2. Coleta e Finalidade dos Dados</h4>
+                    <p>
+                        A coleta de informações ocorre unicamente quando você interage ativamente com os canais de contato disponibilizados no site (como links diretos de e-mail e botão de WhatsApp).
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-on-primary/70">
+                        <li><strong>Dados de Identificação e Contato:</strong> Nome, telefone/WhatsApp e endereço de e-mail. Estes dados são fornecidos voluntariamente por você ao enviar mensagens. A finalidade do tratamento é restrita ao atendimento preliminar, agendamento de sessões, triagem administrativa e esclarecimento de dúvidas sobre os serviços. A base legal sob a LGPD é o consentimento livre e informado (Art. 7º, I) e os procedimentos preliminares a contrato (Art. 7º, V).</li>
+                        <li><strong>Dados de Navegação Anônimos:</strong> Endereço IP aproximado, dados técnicos do dispositivo e navegador, páginas acessadas e tempo de permanência no site. Estes dados são obtidos via cookies técnicos e analíticos para finalidades de segurança e melhoria técnica da experiência na web (Legítimo Interesse — Art. 7º, IX).</li>
+                    </ul>
+                    
+                    <h4 class="font-headline-sm text-gold-light text-base mb-4">3. Confidencialidade e Sigilo Profissional (CFP)</h4>
+                    <p>
+                        Destaca-se expressamente que todo o conteúdo clínico das sessões de terapia — sejam elas realizadas presencialmente ou por videoconferência online — está sujeito a <strong>estrito sigilo profissional</strong>, regulamentado pelo Código de Ética Profissional do Psicólogo do Conselho Federal de Psicologia (CFP). 
+                    </p>
+                    <p>
+                        Nenhum registro, anotação clínica ou dado pessoal sensível decorrente de atendimentos terapêuticos é armazenado, processado ou transmitido através desta plataforma web. A segurança clínica é tratada por canais fechados, criptografados e em conformidade com as resoluções vigentes do CFP.
+                    </p>
+                    
+                    <h4 class="font-headline-sm text-gold-light text-base mb-4">4. Retenção e Compartilhamento de Informações</h4>
+                    <p>
+                        Os dados cadastrais coletados para fins de contato administrativo são mantidos em nossos sistemas apenas pelo tempo estritamente necessário para cumprir com as finalidades descritas, ou de acordo com obrigações legais de arquivo.
+                    </p>
+                    <p>
+                        <strong>Nós não vendemos, alugamos, cedemos ou compartilhamos</strong> suas informações pessoais com terceiros, sob qualquer pretexto. Qualquer compartilhamento só ocorrerá se estritamente exigido por força de lei ou decisão judicial legítima.
+                    </p>
+                    
+                    <h4 class="font-headline-sm text-gold-light text-base mb-4">5. Direitos dos Titulares dos Dados (LGPD & RGPD)</h4>
+                    <p>
+                        Tanto a LGPD (Art. 18) quanto o RGPD (Art. 15 a 22) garantem a você, titular dos dados, o controle total sobre suas informações. Você pode requerer gratuitamente a qualquer momento:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-on-primary/70">
+                        <li>Confirmação da existência de tratamento de seus dados.</li>
+                        <li>Acesso rápido e gratuito aos seus dados pessoais armazenados.</li>
+                        <li>Correção de dados incompletos, inexatos ou desatualizados.</li>
+                        <li>Eliminação/Exclusão definitiva de dados pessoais baseados no seu consentimento.</li>
+                        <li>Revogação do consentimento concedido anteriormente para contato comercial.</li>
+                    </ul>
+                    <p>
+                        Para exercer qualquer um dos seus direitos legais de privacidade, basta enviar sua solicitação diretamente para o controlador dos dados no e-mail oficial: <a href="mailto:andredecoimbra21@gmail.com" class="text-gold-light hover:underline">andredecoimbra21@gmail.com</a>.
+                    </p>
+                </div>
+                
+                <!-- Tab 2: Cookies -->
+                <div id="tab-cookies-content" class="hidden space-y-6">
+                    <h4 class="font-headline-sm text-gold-light text-base mb-4">1. O que são Cookies e por que os utilizamos?</h4>
+                    <p>
+                        Cookies são pequenos arquivos gerados no seu computador ou dispositivo móvel quando você visita o site. Eles têm a função de armazenar fragmentos de dados específicos para que o website reconheça sua visita anterior, melhore o carregamento das páginas e ofereça recursos e navegação fluidas e seguras.
+                    </p>
+                    
+                    <h4 class="font-headline-sm text-gold-light text-base mb-4">2. Classificação dos Cookies Utilizados</h4>
+                    <p>
+                        Nosso site faz uso limitado de cookies, classificados da seguinte forma:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-on-primary/70">
+                        <li><strong>Cookies Necessários:</strong> Indispensáveis para que o site funcione de forma correta e segura, permitindo recursos básicos como navegação de páginas e salvamento das suas preferências de privacidade (incluindo o próprio consentimento expresso no banner). Estes cookies não coletam informações pessoais e não requerem autorização prévia por serem essenciais ao serviço.</li>
+                        <li><strong>Cookies Estatísticos e Analíticos (Analytics):</strong> Coletam métricas completamente anônimas sobre o comportamento dos visitantes, tais como: quantidade de visitas, páginas mais acessadas e taxa de rejeição técnica. Essas informações nos ajudam a otimizar a velocidade de carregamento e estrutura da página.</li>
+                    </ul>
+                    
+                    <h4 class="font-headline-sm text-gold-light text-base mb-4">3. Como gerenciar os Cookies no seu Navegador?</h4>
+                    <p>
+                        Ao abrir a nossa página, você tem a liberdade de aceitar ou recusar os cookies estatísticos pelo banner de consentimento. Caso queira configurar a rejeição total de cookies diretamente no seu navegador, isso pode ser feito a qualquer momento acessando os menus de configurações ou preferências de privacidade do seu software:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-on-primary/70">
+                        <li><strong>Google Chrome:</strong> Configurações > Privacidade e segurança > Cookies e outros dados do site.</li>
+                        <li><strong>Mozilla Firefox:</strong> Opções > Privacidade e Segurança > Cookies e Dados de Sites.</li>
+                        <li><strong>Safari (macOS/iOS):</strong> Preferências > Privacidade > Bloquear todos os cookies.</li>
+                        <li><strong>Microsoft Edge:</strong> Configurações > Permissões do site > Cookies e dados de sites.</li>
+                    </ul>
+                    <p>
+                        Lembramos que a desativação de todos os cookies essenciais pode restringir o funcionamento de certos elementos interativos deste website.
+                    </p>
+                </div>
+                
+            </div>
+            
+            <!-- Rodapé do Modal -->
+            <div class="px-6 py-4 bg-[#1e3245] border-t border-border-gold/20 flex justify-end">
+                <button onclick="closePolicyModal()" class="px-6 py-2 bg-gold text-primary font-label-caps text-xs font-bold tracking-wider hover:bg-gold-light transition-all duration-300 rounded-sm font-semibold">Entendido</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
